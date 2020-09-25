@@ -32,3 +32,5 @@ zgit_monitor(监控报表)
 
 https://github.com/fidley/falv
 当然你也可以修改此处，改为你喜欢的alv展示方式
+
+6：感谢不知名开发者的代码（未找到原作者），让我有了灵感，
