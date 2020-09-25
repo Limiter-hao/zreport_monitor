@@ -1,50 +1,39 @@
-自开发程序监控报表
+Self-developed program monitoring report
 
-ABAP版本：740或更高
+ABAP version: 740 or higher
 
-设计目标
-可以监控自开发程序的使用频率以及使用事件，而且提供了运行时的选择屏幕存储，可通过日志程序直接调用该程序
+Design goals Can monitor the frequency of use and usage events of self-developed programs, 
+and provide a selection screen storage at runtime, which can be directly called through the log program
 
-包含对象
+Contains objects
 
-ZTABAP_REP_MON（日志存储表）
+Ztabap_rep_mon (Log storage table)
 
-Zrepmor_config(监控配置表)
+Zrepmor_config (monitoring configuration table)
 
-Zcl_report_monitor(监控类)
+Zcl_report_monitor (monitoring class)
 
-zgit_monitor(监控报表)
+zgit_monitor (monitoring report)
 
-用法
+usage
 
-1：在代码中按照以下方法即可启用日志功能，如需关闭，请在配置表中对改程序的监控功能给与关闭
-  
-  
-2：声明alv的监控类
+1: In the code, you can enable the log function according to the following method. If you need to turn it off, please turn off the monitoring function of the changed program in the configuration table
 
-    DATA(gcl_monitor) = NEW zcl_report_monitor( sy-repid ).
-    
-    PARAMETERS p_debug TYPE abap_bool NO-DISPLAY. 
-    
-    
-    
-3：在start-of-selection事件中调用一下方法开始记录
+2: Declare the monitoring class
 
-    gcl_monitor->start( p_debug ).
-    
-    
-    
-4：在调用alv显示之前，开发习惯不同，请选择合适的位置，使用以下代码
+DATA(gcl_monitor) = NEW zcl_report_monitor( sy-repid ).
 
-    gcl_monitor->end( ).
-    
+PARAMETERS p_debug TYPE abap_bool NO-DISPLAY.
+3: Call the method in the start-of-selection event to start recording
 
-5.由于zgit_monitor程序在展示选择条件的时候使用了Falv，因此，你需要导入一下falv项目
+gcl_monitor->start( p_debug ).
+4: Before calling the alv display, the development habits are different, please select a suitable location and use the following code
 
+gcl_monitor->end( ).
+5. Since the zgit_monitor program uses Falv when displaying the selection conditions, you need to import the falv project
 
 https://github.com/fidley/falv
 
-当然你也可以修改此处，改为你喜欢的alv展示方式
+Of course, you can also modify this to change the alv display method you like
 
-
-6：感谢不知名开发者的代码（未找到原作者），让我有了灵感
+6: Thanks to the code of an unknown developer (the original author was not found), which gave me inspiration
