@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+    <LANGU>1</LANGU>
+    <DESCRIPT>程序监控类</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <MSG_ID>ZGIT</MSG_ID>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>构造方法</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+     <CMPNAME>DISABLED</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>日志是否关闭</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+     <CMPNAME>END</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>结束</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+     <CMPNAME>GS_MONITOR</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>报表监控表</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+     <CMPNAME>REPID</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>ABAP 程序名称</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_REPORT_MONITOR</CLSNAME>
+     <CMPNAME>START</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>开始</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
