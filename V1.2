@@ -1,0 +1,17 @@
+自主开发的程序监控报告
+ABAP版本：740或更高
+设计目标可以监视自行开发的程序的使用和使用事件的频率，并在运行时提供选择屏幕存储，可以通过日志程序直接调用
+包含对象
+Ztabap_rep_mon（日志存储表）Zrepmor_config（监视配置表）Zcl_report_monitor（监视类）zgit_monitor（监视报告）
+使用说明
+1：在代码中，可以根据以下方法启用日志功能。如果需要关闭它，请在配置表中关闭已更改程序的监视功能
+2：声明监视类
+DATA（gcl_monitor）=新的zcl_report_monitor（sy-repid）。
+参数p_debug类型abap_bool不显示。
+3：在选择开始事件中调用方法以开始记录
+gcl_monitor-> start（p_debug）。
+4：在调用alv显示器之前，开发习惯有所不同，请选择合适的位置并使用以下代码
+gcl_monitor-> end（）。
+5：由于zgit_monitor程序在显示选择条件时使用Falv，因此需要导入falv项目 https://github.com/fidley/falv
+当然，您也可以修改此设置以更改alv显示方法
+6：感谢未知开发人员的代码（找不到原始作者），这给了我启发
