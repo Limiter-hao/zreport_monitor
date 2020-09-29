@@ -121,7 +121,7 @@
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_VIEW_SWITCH</TEXT_NAME>
       <ICON_ID>@UQ@</ICON_ID>
-      <FUN_TEXT>上下\左右分屏切换</FUN_TEXT>
+      <FUN_TEXT>上下\左右分屏</FUN_TEXT>
       <ICON_TEXT>更改布局</ICON_TEXT>
      </RSMPE_FUNT>
     </FUN>

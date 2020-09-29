@@ -3,7 +3,7 @@
 * Application     : GIT
 * Subject         : 监控
 * Ref no:         :
-* Author          : Limiter
+* Author          : 19100641
 * Req Date        : 20200817
 ***********************************************************************
 *          　　设计主要逻辑与原理说明                                 *
@@ -58,7 +58,7 @@ DATA gv_tree TYPE c. "是否启用alv_tree
 *--------------选择屏幕---------------------------------
 SELECTION-SCREEN:BEGIN OF BLOCK b1 WITH FRAME TITLE txt1.
 SELECT-OPTIONS:
-s_repid FOR sy-repid ,
+s_repid FOR sy-repid MEMORY ID rid,
 s_zdate FOR gs_detail-zdate.
 SELECTION-SCREEN:END OF BLOCK b1.
 
