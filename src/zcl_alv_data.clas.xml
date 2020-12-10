@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_ALV_DATA</CLSNAME>
+    <LANGU>1</LANGU>
+    <DESCRIPT>alv报表数据获取</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ALV_DATA</CLSNAME>
+     <CMPNAME>AUTHOR_CHECK</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>权限检查</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ALV_DATA</CLSNAME>
+     <CMPNAME>DEAL_DATA</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>数据处理</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ALV_DATA</CLSNAME>
+     <CMPNAME>GET_DATA</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>取数</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ALV_DATA</CLSNAME>
+     <CMPNAME>MAIN</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>主方法</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

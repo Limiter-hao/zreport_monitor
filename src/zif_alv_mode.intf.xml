@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+    <LANGU>1</LANGU>
+    <DESCRIPT>alv模式属性接口</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>CON</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>Zcl_Alv_Display的ConTainer参考结构</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>DYNNR</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>ABAP 系统字段：当前 Dynpro 编号</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>MODE</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>alv模式</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>NUMBER</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>alv个数</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>REPID</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>ABAP 程序名称</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>TREE</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>是否启用tree</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>T_MODE</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>接口zif_alv_mode的表类型</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_ALV_MODE</CLSNAME>
+     <CMPNAME>ZIFLOG</CMPNAME>
+     <LANGU>1</LANGU>
+     <DESCRIPT>是否启用标准日志</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
