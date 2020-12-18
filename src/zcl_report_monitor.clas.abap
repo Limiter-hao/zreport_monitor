@@ -25,7 +25,7 @@ ENDCLASS.
 CLASS ZCL_REPORT_MONITOR IMPLEMENTATION.
 
 
-  METHOD constructor.
+  METHOD CONSTRUCTOR.
     "将传入的程序名传递到属性中
     repid = i_repid.
     "判断日志功能是否在配置表中关闭
@@ -35,7 +35,7 @@ CLASS ZCL_REPORT_MONITOR IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD end.
+  METHOD END.
     IF disabled = abap_true.
       RETURN.
     ENDIF.
@@ -52,7 +52,7 @@ CLASS ZCL_REPORT_MONITOR IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD start.
+  METHOD START.
 
     IF debug = abap_true.
       BREAK-POINT AT NEXT APPLICATION STATEMENT.

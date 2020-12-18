@@ -20,7 +20,7 @@ CLASS gcl_data IMPLEMENTATION."数据处理类的实现
 
   METHOD get_data.
     DATA:
-      lt_monitor TYPE SORTED TABLE OF ztabap_rep_mon WITH NON-UNIQUE KEY repid start_time,
+      lt_monitor TYPE TABLE OF ztabap_rep_mon,
       ls_monitor TYPE ztabap_rep_mon.
 
     SELECT
@@ -33,24 +33,39 @@ CLASS gcl_data IMPLEMENTATION."数据处理类的实现
       RETURN.
     ENDIF.
 
-    CLEAR gs_overview.
-    LOOP AT lt_monitor INTO ls_monitor.
-      ADD 1 TO gs_overview-count.
-      IF ls_monitor-end_time IS NOT INITIAL.
-        ADD 1 TO gs_overview-real_count.
-        gs_overview-avg_time = gs_overview-avg_time + calc_second( timestampl1 = ls_monitor-start_time
-                                                                   timestampl2 = ls_monitor-end_time ).
-      ENDIF.
+    LOOP AT lt_monitor INTO ls_monitor GROUP BY ( repid = ls_monitor-repid )
+                                        ASSIGNING FIELD-SYMBOL(<group>).
 
-      AT END OF repid.
-        gs_overview-repid = ls_monitor-repid.
-        IF gs_overview-real_count <> 0.
-          gs_overview-avg_time = gs_overview-avg_time / gs_overview-real_count.
+      gs_overview-repid = <group>-repid.
+      LOOP AT GROUP <group> ASSIGNING FIELD-SYMBOL(<ls_group>).
+        IF <ls_group>-end_time IS NOT INITIAL.
+          gs_overview-avg_time = gs_overview-avg_time + calc_second( timestampl1 = <ls_group>-start_time
+                                                                     timestampl2 = <ls_group>-end_time ).
         ENDIF.
-        APPEND gs_overview TO gt_overview.
-        CLEAR gs_overview.
-      ENDAT.
+        gs_overview-count = gs_overview-count + 1.
+
+        MOVE-CORRESPONDING <ls_group> TO gs_detail.
+        IF gs_detail-end_time > gs_detail-start_time.
+          gs_detail-proc_time = calc_second( timestampl1 = ls_monitor-start_time
+                                             timestampl2 = ls_monitor-end_time ).
+        ENDIF.
+        IF gs_detail-end_time IS INITIAL.
+          gs_detail-color = 'C601'.
+        ENDIF.
+        APPEND gs_detail TO gt_detail.
+        CLEAR gs_detail.
+
+      ENDLOOP.
+
+      IF gs_overview-real_count <> 0.
+        gs_overview-avg_time = gs_overview-avg_time / gs_overview-real_count.
+      ENDIF.
+      APPEND gs_overview TO gt_overview.
+      CLEAR gs_overview.
+      CLEAR ls_monitor.
     ENDLOOP.
+
+    FREE lt_monitor.
 
     IF gt_overview IS NOT INITIAL.
 
@@ -80,21 +95,6 @@ CLASS gcl_data IMPLEMENTATION."数据处理类的实现
       ENDLOOP.
 
     ENDIF.
-
-    LOOP AT lt_monitor INTO ls_monitor.
-      MOVE-CORRESPONDING ls_monitor TO gs_detail.
-      IF gs_detail-end_time > gs_detail-start_time.
-        gs_detail-proc_time = calc_second( timestampl1 = ls_monitor-start_time
-                                           timestampl2 = ls_monitor-end_time ).
-      ENDIF.
-      IF gs_detail-end_time IS INITIAL.
-        gs_detail-color = 'C601'.
-      ENDIF.
-      APPEND gs_detail TO gt_detail.
-      CLEAR gs_detail.
-      CLEAR ls_monitor.
-    ENDLOOP.
-    CLEAR lt_monitor.
 
   ENDMETHOD.
 

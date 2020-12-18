@@ -3,7 +3,7 @@
 * Application     : GIT
 * Subject         : 监控
 * Ref no:         :
-* Author          : 19100641
+* Author          : Limiter
 * Req Date        : 20200817
 ***********************************************************************
 *          　　设计主要逻辑与原理说明                                 *
@@ -63,11 +63,17 @@ s_zdate FOR gs_detail-zdate.
 SELECTION-SCREEN:END OF BLOCK b1.
 
 "Defin class 大部分通用类
-INCLUDE zgit_monitor_cls_define.
+INCLUDE ZGIT_MONITOR_CLS_DEFINE.
+*INCLUDE ZGIT_MONITORA_CLS_DEFINE.
+*INCLUDE zgit_monitor_cls_define.
 "Alv_gird与Gcl_event_receiver的类以及其他类的实现
-INCLUDE zgit_monitor_cls_impl.
+INCLUDE ZGIT_MONITOR_CLS_IMPL.
+*INCLUDE ZGIT_MONITORA_CLS_IMPL.
+*INCLUDE zgit_monitor_cls_impl.
 "标准Status
-INCLUDE zgit_monitor_module.
+INCLUDE ZGIT_MONITOR_MODULE.
+*INCLUDE ZGIT_MONITORA_MODULE.
+*INCLUDE zgit_monitor_module.
 
 INITIALIZATION.  "IniTiaLiZaTion
 
